@@ -1,1 +1,1 @@
-# Linear Algebra Cpp Projects
+# Linear Algebra C++ Projects

@@ -1,13 +1,13 @@
-CFLAGS = -std=c++17 -O2
+CFLAGS = -std=c++17
 LDFLAGS = 
 
-main: main.cpp
-	g++ $(CFLAGS) -o main main.cpp $(LDFLAGS)
+main: main.cpp vector.hpp
+	clear && g++ $(CFLAGS) -o main main.cpp $(LDFLAGS)
 
-.PHONY: test clean
+.PHONY: run clean
 
-test: main
-	./main
+run: main
+	clear && ./main
 
 clean:
 	rm -f main
