@@ -1,5 +1,5 @@
-#ifndef VECTOR_HPP
-#define VECTOR_HPP
+#ifndef MYVECTOR_HPP
+#define MYVECTOR_HPP
 #include <array>
 
 
@@ -14,16 +14,16 @@
 
 
 // vv<<<--- This is the Class Template
-template<class T>
+template<class T, unsigned int dimensions>
 class vector3D
 {
 private:
     // Member variables
-    std::array<T, 3> vectr;
+    std::array<T, dimensions> vectr;
 public:
     // Constructors
     vector3D();
-    vector3D(T a, T b, T c);
+    // vector3D();
     // Overloading [] operator to access elements in array style
     // v<<-- Non-Const Version
     T &operator [](int  index);
@@ -49,8 +49,8 @@ public:
 // vv<<<----- This is for Non-Const Objects
 // Implementation of [] operator.  This function must return
 // a reference as array element can be put on left side
-template<class T>
-T &vector3D<T>::operator [](int  index)
+template<class T, unsigned int dimensions>
+T &vector3D<T, dimensions>::operator [](int  index)
 {
     return vectr[index];
 }
@@ -74,8 +74,8 @@ T &vector3D<T>::operator [](int  index)
 
 
 // vv<<<----- This is for Const Objects
-template<class T>
-const T &vector3D<T>::operator [](int  index) const
+template<class T, unsigned int dimensions>
+const T &vector3D<T, dimensions>::operator [](int  index) const
 {
     return vectr[index];
 }
@@ -101,13 +101,11 @@ const T &vector3D<T>::operator [](int  index) const
 
 
 
-// vv<<<---- Constructor definition
-template<class T>
-vector3D<T>::vector3D()
+// vv<<<---- Default Constructor definition
+template<class T, unsigned int dimensions>
+vector3D<T, dimensions>::vector3D()
 {
-    vectr[0] = 0;
-    vectr[1] = 0;
-    vectr[2] = 0;
+    ;
 }
 
 
@@ -128,13 +126,11 @@ vector3D<T>::vector3D()
 
 
 // vv<<<---- Constructor With Arguments definition
-template<class T>
-vector3D<T>::vector3D(T a, T b, T c)
-{
-    vectr[0] = a;
-    vectr[1] = b;
-    vectr[2] = c;
-}
+// template<class T, unsigned int dimensions>
+// vector3D<T, dimensions>::vector3D()
+// {
+//     ;
+// }
 
 
 
@@ -151,4 +147,4 @@ vector3D<T>::vector3D(T a, T b, T c)
 
 
 
-#endif // VECTOR_HPP
+#endif // MYVECTOR_HPP
