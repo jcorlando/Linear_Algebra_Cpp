@@ -8,13 +8,6 @@
 
 
 
-
-
-
-
-
-
-
 // vv<<<--- This is the Class Template
 template<class T, unsigned int dimensions>
 class myvector
@@ -26,19 +19,14 @@ public:
     // Constructors
     myvector();
     myvector( std::initializer_list<T> list );
+    // Print Function For Vector
+    void print_vector();
     // Overloading [] operator to access elements in array style
     // v<<-- Non-Const Version
     T &operator [](int  index);
     // v<<-- Const Version
     const T &operator [](int  index) const;
 };
-
-
-
-
-
-
-
 
 
 
@@ -64,17 +52,6 @@ T &myvector<T, dimensions>::operator [](int  index)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // vv<<<----- This is for Const Objects
 template<class T, unsigned int dimensions>
 const T &myvector<T, dimensions>::operator [](int  index) const
@@ -87,16 +64,14 @@ const T &myvector<T, dimensions>::operator [](int  index) const
 
 
 
-
-
-
-
-
-
-
-
-
-
+template<class T, unsigned int dimensions>
+void myvector<T, dimensions>::print_vector()
+{
+    for (auto element : this->vectr)
+    {
+        std::cout << element << std::endl;
+    }
+}
 
 
 
@@ -115,22 +90,6 @@ myvector<T, dimensions>::myvector()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // vv<<<---- Constructor With Arguments definition
 template<class T, unsigned int dimensions>
 myvector<T, dimensions>::myvector( std::initializer_list<T> list )
@@ -140,19 +99,6 @@ myvector<T, dimensions>::myvector( std::initializer_list<T> list )
         this->vectr[it - list.begin()] = *it;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
