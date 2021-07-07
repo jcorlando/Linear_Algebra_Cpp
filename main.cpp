@@ -1,19 +1,13 @@
 #include "vector.hpp"
-#include <iostream>
 
 
 int main()
 {
-    vector3D<double, 3> vec1(3.3, 8.5, 7.7);
-    // vector3D<double, 3> vec2;
-
-    std::cout << vec1[0] << std::endl;
-    std::cout << vec1[1] << std::endl;
-    std::cout << vec1[2] << std::endl;
-
-    // std::cout << vec2[0] << std::endl;
-    // std::cout << vec2[1] << std::endl;
-    // std::cout << vec2[2] << std::endl;
+    // v<<-- Initialized Using An Initializer List Must Use
+    // v<<-- Bracket "{}" Syntax With Argument Constructor;
+    myvector<double, 4> vec1( {3.3, 8.5, 7.7, 8.6} );
+    myvector<double, 3> vec2;
+    
 
     return 0;
 }
